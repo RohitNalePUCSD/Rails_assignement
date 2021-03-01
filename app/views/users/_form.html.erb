@@ -1,0 +1,21 @@
+
+<p>
+    <%= message %>
+</p>
+<%= form_with model: @user do |form| %>
+
+    <%if @user.errors.any?%>
+    <%= @user.errors.full_messages.to_sentence%>
+    <% end %>
+
+    <%= form.label :query, "User Name" %>
+    <%= form.text_field :name %><br>
+   
+    <%= form.label :query, "User Age" %>
+    <%= form.text_field :age %><br>
+   
+    <%= form.label :query, "User City" %>
+    <%= form.text_field :city %><br>
+  
+    <%= form.submit %>
+<% end %>

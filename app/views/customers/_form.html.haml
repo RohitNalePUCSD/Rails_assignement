@@ -1,0 +1,21 @@
+
+%p
+  = message
+
+=form_with model: @customer do |form|
+  - if @customer.errors.any?
+    = @customer.errors.full_messages.to_sentence
+  
+  = form.label :query, "Customer Name"
+  = form.text_field :name
+  %br/
+  
+  = form.label :query, "Customer Age"
+  = form.text_field :age
+  %br/
+  
+  = form.label :query, "Customer city"
+  = form.text_field :city
+  %br/
+  
+  = form.submit
